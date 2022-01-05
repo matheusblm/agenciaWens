@@ -7,25 +7,12 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import imageMain from "../../Assets/Images/imageMain.png";
-import elementMain from "../../Assets/Images/elementMain.png";
-import Lottie from "lottie-web";
-import animationData from "../../Assets/Animations/animation-main.json";
-import { useState } from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
 
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import elementMain from "../../Assets/Images/elementMain.png";
+import animationData from "../../Assets/Animations/animation-main.json";
 
 export const Main = () => {
-  const [animationState, setAnimationState] = useState({
-    isStopped: false,
-    isPaused: false,
-  });
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: require("../../Assets/Animations/animation-main.json"),
-  };
-
   return (
     <>
       <Flex w="100%" justifyContent="center">
@@ -52,7 +39,7 @@ export const Main = () => {
                 bg="#FFBC92"
                 color="#FFFFFF"
                 alignSelf="start"
-                _hover={{ bg: "#FCE5D7" }}
+                _hover={{ bg: "#D3A88C" }}
               >
                 Consulte
               </Button>
@@ -73,8 +60,8 @@ export const Main = () => {
           right={["86%", "86%", "82%", "94%", "94%"]}
           h="490px"
           w="130px"
+          opacity={["0.6", "0.6", "1", "1"]}
         >
-          <Image src={elementMain} m="5px" />
           <Image src={elementMain} m="5px" />
           <Image src={elementMain} m="5px" />
           <Image src={elementMain} m="5px" />
@@ -85,8 +72,8 @@ export const Main = () => {
           right={["50%", "50%", "70%", "86%", "88%"]}
           h="490px"
           w="130px"
+          opacity={["0.6", "0.6", "1", "1"]}
         >
-          <Image src={elementMain} m="5px" />
           <Image src={elementMain} m="5px" />
           <Image src={elementMain} m="5px" />
           <Image src={elementMain} m="5px" />
