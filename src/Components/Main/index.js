@@ -9,13 +9,33 @@ import {
 } from "@chakra-ui/react";
 import imageMain from "../../Assets/Images/imageMain.png";
 import elementMain from "../../Assets/Images/elementMain.png";
+import Lottie from "lottie-web";
+import animationData from "../../Assets/Animations/animation-main.json";
+import { useState } from "react";
+
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
 export const Main = () => {
+  const [animationState, setAnimationState] = useState({
+    isStopped: false,
+    isPaused: false,
+  });
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: require("../../Assets/Animations/animation-main.json"),
+  };
+
   return (
     <>
       <Flex w="100%" justifyContent="center">
         <Flex w="70%" maxW="1500px">
-          <Flex alignContent="center" p="20px" w="50%" alignItems="center">
+          <Flex
+            alignContent="center"
+            p="20px"
+            w={["100%", "100%", "100%", "50%"]}
+            alignItems="center"
+          >
             <VStack textAlign="left" justifyContent="space-evenly" h="300px">
               <Heading w="100%">Agencia de Marketing Digital</Heading>
               <Heading w="100%"> </Heading>
@@ -38,26 +58,39 @@ export const Main = () => {
               </Button>
             </VStack>
           </Flex>
-          <Box w="50%" p="20px">
-            <Image src={imageMain} />
+          <Box w="50%" p="20px" display={["none", "none", "none", "block"]}>
+            <Player
+              autoplay
+              loop
+              src={animationData}
+              style={{ height: "645px", width: "650px" }}
+            />
           </Box>
         </Flex>
-        <Image
-          src={elementMain}
-          w="134px"
-          h="100px"
+        <Box
           position="absolute"
-          top="20%"
-          right="92%"
-        />{" "}
-        <Image
-          src={elementMain}
-          w="134px"
-          h="100px"
+          top="22%"
+          right={["86%", "86%", "82%", "94%", "94%"]}
+          h="490px"
+          w="130px"
+        >
+          <Image src={elementMain} m="5px" />
+          <Image src={elementMain} m="5px" />
+          <Image src={elementMain} m="5px" />
+          <Image src={elementMain} m="5px" />
+        </Box>
+        <Box
           position="absolute"
-          top="35%"
-          right="92%"
-        />
+          top="22%"
+          right={["50%", "50%", "70%", "86%", "88%"]}
+          h="490px"
+          w="130px"
+        >
+          <Image src={elementMain} m="5px" />
+          <Image src={elementMain} m="5px" />
+          <Image src={elementMain} m="5px" />
+          <Image src={elementMain} m="5px" />
+        </Box>
       </Flex>
     </>
   );
