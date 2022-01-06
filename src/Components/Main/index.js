@@ -24,7 +24,9 @@ export const Main = () => {
             alignItems="center"
           >
             <VStack textAlign="left" justifyContent="space-evenly" h="300px">
-              <Heading w="100%">Agencia de Marketing Digital</Heading>
+              <Heading w="100%" fontFamily="Spartan">
+                Agencia de Marketing Digital
+              </Heading>
               <Heading w="100%"> </Heading>
 
               <Text>

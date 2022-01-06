@@ -9,15 +9,15 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-import siteIcon from "../../Assets/Images/siteIcon.png";
 import servicesElement from "../../Assets/Images/servicesElement.png";
+import { servicesWens } from "../../Utils/services.js";
 
 export const Services = () => {
   return (
     <>
       <Flex w="100%" justifyContent="center">
         <VStack pt="100px">
-          <Heading>Servicos</Heading>
+          <Heading fontFamily="Spartan">Servicos</Heading>
           <Spacer />
           <Box w="56px" borderTop="2px solid black" borderRadius="10px"></Box>
           <Text textAlign="center">
@@ -35,7 +35,7 @@ export const Services = () => {
             zIndex="1000"
             pt="100px"
           >
-            {[1, 2, 3, 4, 5, 6].map(() => (
+            {servicesWens.map((item) => (
               <VStack
                 maxW="350px"
                 h="350px"
@@ -43,17 +43,15 @@ export const Services = () => {
                 borderRadius="20px"
                 p="50px"
                 textAlign="left"
+                bg="white"
               >
-                <Image src={siteIcon} alt="icon" w="100px" h="95px" />
+                <Image src={item.icon} alt="icon" h="85px" />
                 <Spacer />
-                <Heading fontSize="2xl" w="100%">
-                  Criacao de Sites
+                <Heading fontSize="2xl" w="100%" fontFamily="Spartan">
+                  {item.title}
                 </Heading>
                 <Spacer />
-                <Text>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
-                </Text>
+                <Text>{item.description}</Text>
               </VStack>
             ))}
           </SimpleGrid>

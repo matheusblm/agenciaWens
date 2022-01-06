@@ -14,7 +14,7 @@ export const theme = extendTheme({
         fontFamily: "Montserrat",
       },
       h2: {
-        fontFamily: "Spartan",
+        fontFamily: "Montserrat",
         color: "#212121",
       },
       h3: {
